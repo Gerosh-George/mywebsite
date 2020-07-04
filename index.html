@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">    
+    <title>Gerosh George 👨🏽‍💻</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="/favicons/favicon-32x32.png">
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+    <main>
+
+        <div class="loader">
+            <div class="name">Gerosh</div>
+            <div class="loading-line"></div>
+            <div class="name">George</div>
+        </div>
+
+        <div class="nav-container">
+            <div class="burger" onclick="change(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home" class="link active"><span class="material-icons ">
+                            home
+                        </span> Home</a>
+
+                </li>
+
+                <li> <a href="#about" class="link"><span class="material-icons ">
+                            person
+                        </span> About</a>
+
+                </li>
+
+                <li><a href="#projects" class="link"><span class="material-icons ">
+                            view_carousel
+                        </span> Projects</a>
+
+                </li>
+
+                <li>
+                    <a href="#contact" class="link"><span class="material-icons ">
+                            contacts
+                        </span> Contact</a>
+
+                </li>
+            </ul>
+
+        </div>
+
+        <section class="home active" id="home">
+            <div class="intro">
+                <h2>Hello there!</h2>
+                <h1>I am
+                    <span class="typing blue" data-wait="2000"
+                        data-words='["Gerosh George","a CS Student","a Programmer","a Developer","a Human Being."]'>
+                    </span>
+                </h1>
+                <p class="details"> I am a coding enthusiast based in Mumbai, India.
+                    I am an affable person who likes to code and solve challenging
+                    problems using my technical expertise. </p>
+                <div class="about-button btn btn-primary"><a href="#about">
+                        <span class="material-icons md-light">
+                            person</span> More about me </a></div>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="header">
+                <h1 class="title">About <span class="blue">me</span></h1>
+                <h3 class="sub-title">I learn and code new things, and i love what i do.</h3>
+            </div>
+
+            <div class="personal-info">
+                <div class="profile">
+                    <div class="image">
+                        <img src="images/cover_image.jpg" alt="profile-pic">
+                    </div>
+
+                </div>
+                <div class="info">
+                    <div class="col">
+                        <li class="text">
+                            <h6><span class="detail">First Name</span>Gerosh</h6>
+                        </li>
+                        <li class="text">
+                            <h6><span class="detail">Last Name</span>George</h6>
+                        </li>
+                        <li class="text">
+                            <h6><span class="detail">Birthdate</span>9 July 2001</h6>
+                        </li>
+                        <li class="text">
+                            <h6><span class="detail">Nationality</span>Indian</h6>
+                        </li>
+                    </div>
+                    <div class="col">
+                        <li class="text">
+                            <h6><span class="detail">Address</span>Mumbai, India</h6>
+                        </li>
+                        <li class="text">
+                            <h6><span class="detail">Primary Language</span>English</h6>
+                        </li>
+                        <li class="text">
+                            <h6><span class="detail">Phone</span>+91 9819774075</h6>
+                        </li>
+                        <li class="text">
+                            <h6><span class="detail">Email</span>geroshg@gmail.com</h6>
+                        </li>
+                    </div>
+                </div>
+            </div>
+
+            <!--Resume things start-->
+            <!--Experience add in future #TODO-->
+
+            <div class="resume-container">
+                <div class="education">
+
+                    <div class="header">
+                        <h2>Education</h2>
+                    </div>
+
+                    <div class="item">
+                        <span class="bullet text"></span>
+                        <div class="card text" style="width: 25rem;">
+                            <h5 class="card-title"> <span class="year">
+                                    <span class="material-icons">
+                                        calendar_today
+                                    </span> 2019 - Present
+                                </span>
+                                <span class="title">Bachelor's degree
+                                    <span class="separator"></span>
+                                    <span class="title1">VIT University, India</span>
+                                </span>
+
+                            </h5>
+                            <p class="card-text">I am pursuing CSE and currently in my second year. First year CGPA: 9.0</p>
+                        </div>
+                    </div>
+
+
+                    <div class="item">
+                        <span class="bullet text"></span>
+                        <div class="card text" style="width: 25rem;">
+                            <h5 class="card-title"> <span class="year">
+                                    <span class="material-icons">
+                                        calendar_today
+                                    </span> 2017 - 2019
+                                </span>
+                                <span class="title">ISC 
+                                    <span class="separator"></span>
+                                    <span class="title1">Smt Sulochanadevi Singhania School, India</span>
+                                </span>
+
+                            </h5>
+                            <p class="card-text">I passed my higher secondary education from this esteem institute with an aggregate of 96% in science stream with computer science</p>
+                        </div>
+                    </div>
+
+
+                    <div class="item">
+                        <span class="bullet text"></span>
+                        <div class="card text" style="width: 25rem;">
+                            <h5 class="card-title"> <span class="year">
+                                    <span class="material-icons">
+                                        calendar_today
+                                    </span> 2012 - 2017
+                                </span>
+                                <span class="title">ICSE
+                                    <span class="separator"></span>
+                                    <span class="title1">Smt Sulochanadevi Singhania School, India</span>
+                                </span>
+
+                            </h5>
+                            <p class="card-text">I passed my 10th standard from this esteem institute with an aggregate of 95% in science stream with computer application.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!--resume container over-->
+
+            <div class="skill-container">
+                <div class="header">
+                    <h2>Skills</h1>
+                </div>
+
+
+                <div class="skills">
+                    <div class="skill">
+                        <div class="skill-text text">Python</div>
+                        <div class="skill-bar">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80"
+                                    aria-valuemin="0" aria-valuemax="100"></div>
+                                <span class="percent" style="right: calc(20% - 23px);"> 80%
+                                    <div class="arrow"></div>
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-text text">Java</div>
+                        <div class="skill-bar">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70"
+                                    aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span class="percent" style="right: calc(30% - 23px);"> 70%
+                                <div class="arrow"></div>
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-text text">Django</div>
+                        <div class="skill-bar">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 55%;" aria-valuenow="55"
+                                    aria-valuemin="0" aria-valuemax="100"></div>
+                                <span class="percent" style="right: calc(45% - 23px);"> 55%
+                                    <div class="arrow"></div>
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-text text">C++</div>
+                        <div class="skill-bar">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 65%;" aria-valuenow="25"
+                                    aria-valuemin="0" aria-valuemax="100"></div>
+                                <span class="percent" style="right: calc(35% - 23px);"> 65%
+                                    <div class="arrow"></div>
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-text text">HTML & CSS</div>
+                        <div class="skill-bar">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="60"
+                                    aria-valuemin="0" aria-valuemax="100"></div>
+                                <span class="percent" style="right: calc(40% - 23px);"> 60%
+                                    <div class="arrow"></div>
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-text text">MySql</div>
+                        <div class="skill-bar">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 65%;" aria-valuenow="25"
+                                    aria-valuemin="0" aria-valuemax="100"></div>
+                                <span class="percent" style="right: calc(35% - 23px);"> 65%
+                                    <div class="arrow"></div>
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </section>
+
+        <section class="projects" id="projects">
+
+            <div class="header">
+                <h1>My <span class="blue">Portfolio</span></h1>
+                <h3 class="sub-title">a few recent coding projects of mine. Want to see more? Checkout my Github.
+                </h3>
+            </div>
+
+            <div class="porfolio-container">
+
+            </div>
+
+        </section>
+
+        <section class="contact" id="contact">
+
+            <div class="header">
+                <h1>Get <span class="blue">in touch</span></h1>
+                <h3 class="sub-title">😄 I'm always open to discuss new ideas and projects 😉</h3>
+            </div>
+
+            <div class="contact-container">
+                <div class="details ">
+                    <li class="text">
+                        <h5><span class="detail">Phone</span>
+                            <i class="fa fa-whatsapp fa-lg" aria-hidden="true"></i>
+                            +91 9819774075</h5>
+                    </li>
+                    <li class="text">
+                        <h5><span class="detail">Email</span>
+                            <i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i>
+                            geroshg@gmail.com</h5>
+                    </li>
+                    <li class="text">
+                        <h5><span class="detail">Instagram</span>
+                            <i class="fa fa-instagram fa-lg" aria-hidden="true"></i>
+                            gerosh1441</h5>
+                    </li>
+                    <li class="text">
+                        <h5><span class="detail">Github</span>
+                            <i class="fa fa-github fa-lg" aria-hidden="true"></i>
+                            Gerosh-George</h5>
+                    </li>
+                </div>
+
+                <div class="social">
+                    <div class="text"> Please feel free to contact me
+                        if you have any suggestions, 
+                        projects or just want to say Hello. I will surely get back to you!
+                    </div>
+
+                    <div class="social-links">
+
+                        <a href="https://www.instagram.com/gerosh1441" target="_blank"><li data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></li></a>
+                        <a href="https://github.com/Gerosh-George" target="_blank"><li><i class="fa fa-github fa-3x" aria-hidden="true"></i></li></a>
+                        <a href="https://www.linkedin.com/" target="_blank"><li><i class="fa fa-linkedin fa-3x" aria-hidden="true"></i></li></a>
+                        
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </section>
+
+    </main>
+
+    <script src="app.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
