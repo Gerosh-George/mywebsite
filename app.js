@@ -1,140 +1,161 @@
-window.addEventListener("load", function(){
-    const loader=document.querySelector(".loader");
-    loader.className+=" hidden";
+window.addEventListener("load", function () {
+	const loader = document.querySelector(".loader");
+	loader.className += " hidden";
 });
 
-document.addEventListener('DOMContentLoaded',init); 
+document.addEventListener("DOMContentLoaded", init);
 
-var currentPageIndex=0;
+var currentPageIndex = 0;
 
-const typewriter=function(txtElement,words,wait=3000){
-    this.txtElement=txtElement;
-    this.words=words;
-    this.wait=parseInt(wait);
-    this.txt="";
-    this.wordIndex=0;
-    this.type();
-    this.isDeleting=false;
+const typewriter = function (txtElement, words, wait = 3000) {
+	this.txtElement = txtElement;
+	this.words = words;
+	this.wait = parseInt(wait);
+	this.txt = "";
+	this.wordIndex = 0;
+	this.type();
+	this.isDeleting = false;
+};
+
+typewriter.prototype.type = function () {
+	const index = this.wordIndex % this.words.length;
+	const currentWord = this.words[index];
+
+	if (this.isDeleting) {
+		this.txt = currentWord.substring(0, this.txt.length - 1);
+	} else {
+		this.txt = currentWord.substring(0, this.txt.length + 1);
+	}
+
+	this.txtElement.innerHTML = `<span class="cursor">${this.txt}</span>`;
+
+	//Initial Type Speed
+	let typespeed = 200;
+
+	//varying the speed
+	if (this.isDeleting) {
+		typespeed = 50;
+	}
+
+	//check is word is complete
+	if (this.txt === currentWord && !this.isDeleting) {
+		typespeed = this.wait;
+		this.isDeleting = true;
+	} else if (this.isDeleting && this.txt === "") {
+		this.isDeleting = false;
+		this.wordIndex++;
+		typespeed = 500;
+	}
+
+	setTimeout(() => this.type(), typespeed);
+};
+
+function init() {
+	const txtElement = document.querySelector(".typing");
+	const words = JSON.parse(txtElement.getAttribute("data-words"));
+	const wait = txtElement.getAttribute("data-wait");
+
+	new typewriter(txtElement, words, wait);
+
+	aboutbtn = document.querySelector(".about-button a");
+	aboutbtn.addEventListener("click", aboutChange);
+
+	var ReqObj = new XMLHttpRequest();
+	ReqObj.open("GET", "https://api.github.com/users/Gerosh-George/repos");
+	ReqObj.onload = function () {
+		var data = JSON.parse(ReqObj.responseText);
+		loadproj(data);
+	};
+	ReqObj.send();
 }
 
-typewriter.prototype.type=function(){
-    
-    const index=this.wordIndex % this.words.length;
-    const currentWord=this.words[index];
-    
-    if(this.isDeleting){
-     this.txt=currentWord.substring(0,this.txt.length - 1);
- 
-    } else{
-        this.txt=currentWord.substring(0,this.txt.length + 1);
-    }
- 
-    this.txtElement.innerHTML=`<span class="cursor">${this.txt}</span>`;
- 
-    //Initial Type Speed
-    let typespeed=200;
-    
-    //varying the speed
-    if(this.isDeleting){
-        typespeed=50;
-    }
- 
-    //check is word is complete
-    if(this.txt===currentWord && !this.isDeleting){
-        typespeed=this.wait;
-        this.isDeleting=true;
-    } else if(this.isDeleting && this.txt===''){
-        this.isDeleting=false;
-        this.wordIndex++;
-        typespeed=500;
-    }
- 
- 
- 
-    setTimeout(()=>this.type(),typespeed);
+function aboutChange(event) {
+	const navlinks = document.querySelectorAll(".link");
+	id = event.target.getAttribute("href");
+
+	navlinks.forEach((link, index) => {
+		if (link.getAttribute("href") === id) {
+			link.classList += " active";
+			displaySection(link.getAttribute("href"), index);
+		} else {
+			link.classList.remove("active");
+		}
+	});
 }
 
-function init(){
-    const txtElement=document.querySelector('.typing');
-    const words=JSON.parse(txtElement.getAttribute('data-words'));
-    const wait=txtElement.getAttribute('data-wait');
-   
-    new typewriter(txtElement,words,wait); 
+function change(event) {
+	event.classList.toggle("change");
+	const container = document.querySelector(".nav-container");
+	const navbar = document.querySelector(".nav-links");
 
-    aboutbtn=document.querySelector('.about-button a')
-    aboutbtn.addEventListener('click',aboutChange)
+	if (navbar.style.display === "flex") {
+		container.style.width = `50px`;
+		container.style.height = `50px`;
+		navbar.style.display = `none`;
+	} else {
+		container.style.width = `100px`;
+		container.style.height = `350px`;
+		navbar.style.display = `flex`;
+	}
 
+	const navlinks = document.querySelectorAll(".nav-links li");
+
+	navlinks.forEach((link) => {
+		if (link.style.animation === "navLinkFade .8s ease forwards") {
+			link.style.animation = "";
+		} else {
+			link.style.animation = `navLinkFade .8s ease-in forwards`;
+			link.addEventListener("click", activeChange);
+		}
+	});
 }
 
-function aboutChange(event)
-{
-  const navlinks=document.querySelectorAll('.link')
-  id=event.target.getAttribute('href')
+function activeChange(event) {
+	const updatelink = event.target;
+	const navlinks = document.querySelectorAll(".link");
+	navlinks.forEach((link, index) => {
+		link.classList.remove("active");
+		if (link === updatelink)
+			displaySection(updatelink.getAttribute("href"), index);
+	});
 
-  navlinks.forEach((link,index)=>{
-      if(link.getAttribute('href')===id){
-        link.classList+=" active"
-        displaySection(link.getAttribute('href'),index)
-      } else{
-          link.classList.remove('active')
-      }
-  })
-
+	updatelink.classList += " active";
+	change(document.querySelector(".burger"));
 }
 
-function change(event){
-  event.classList.toggle('change')
-  const container=document.querySelector(".nav-container");
-  const navbar=document.querySelector(".nav-links");
- 
-  if(navbar.style.display==='flex'){
-    container.style.width=`50px`;
-    container.style.height=`50px`;
-    navbar.style.display=`none`;
-  } else{
-    container.style.width=`100px`;
-    container.style.height=`350px`;
-    navbar.style.display=`flex`;
-  }
+function displaySection(id, index) {
+	const pages = document.querySelectorAll("section");
+	const currentPage = pages[currentPageIndex];
 
-  const navlinks=document.querySelectorAll(".nav-links li")
+	const nextPage = document.querySelector(id);
 
-  navlinks.forEach((link)=>{
-    if(link.style.animation==='navLinkFade .8s ease forwards'){
-        link.style.animation='';
-    } else{
-        link.style.animation=`navLinkFade .8s ease-in forwards`;
-        link.addEventListener('click',activeChange)
-    }
-  })
+	currentPage.classList.remove("active");
+	//currentPage.style.display=`none`
+
+	// nextPage.style.display=`block`
+	nextPage.classList += " active";
+
+	currentPageIndex = index;
 }
 
-function activeChange(event){
-    const updatelink=event.target
-    const navlinks=document.querySelectorAll('.link')
-    navlinks.forEach((link,index)=>{
-       link.classList.remove("active")
-       if(link===updatelink)
-       displaySection(updatelink.getAttribute('href'),index)
-       
-    })
+function loadproj(data) {
+	console.log("project");
+	var port_cont = document.querySelector(".portfolio-container");
+	var row = port_cont.querySelector(".row");
+	
 
-    updatelink.classList+=" active"  
-    change(document.querySelector('.burger'))
-}
-
-function displaySection(id,index){
-   const pages=document.querySelectorAll('section')
-   const currentPage=pages[currentPageIndex]
-  
-   const nextPage=document.querySelector(id)
-  
-    currentPage.classList.remove('active')
-    //currentPage.style.display=`none`
-   
-    // nextPage.style.display=`block`
-    nextPage.classList+=" active"
-
-   currentPageIndex=index 
-
+	data.forEach((project, index) => {
+		if (project.fork == false && project.name != "mywebsite" && index < 10) {
+			row.innerHTML += `<div class="col-sm-6">
+	<div class="card border-primary mb-3">
+	  <div class="card-body">
+		<h5 class="card-title text-center">${project.name}</h5>
+		<p class="card-text">${project.description}</p>
+		<p class="card-text text-right">Language: ${project.language}</p>
+		<a href="${project.html_url}" target="_blank" class="btn btn-primary">View Code</a>
+	  </div>
+	 </div>
+	</div>`;
+		}
+	});
 }

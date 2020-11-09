@@ -621,8 +621,8 @@ li {
 
 .portfolio-container {
   width: 80%;
-  margin: auto;
-  height: 500px;
+  margin: 5% 5% 0 5%;
+  min-height: 500px;
   position: absolute;
   top: 20%;
   left: 10%;
@@ -630,6 +630,14 @@ li {
 
 .projects .header h3 {
   font-size: 18px;
+}
+
+.card-title {
+  color: #2196F3;
+}
+
+.card {
+  border-radius: 20px;
 }
 
 .contact {
