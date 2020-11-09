@@ -84,6 +84,7 @@ function aboutChange(event) {
 }
 
 function change(event) {
+	
 	event.classList.toggle("change");
 	const container = document.querySelector(".nav-container");
 	const navbar = document.querySelector(".nav-links");
@@ -92,10 +93,21 @@ function change(event) {
 		container.style.width = `50px`;
 		container.style.height = `50px`;
 		navbar.style.display = `none`;
-	} else {
+		container.style.background = `transparent`;
+		container.style.top = `6%`;
+		container.style.left = `3%`;
+	} else if (window.innerWidth > 576) {
 		container.style.width = `100px`;
 		container.style.height = `350px`;
 		navbar.style.display = `flex`;
+	} else {
+		container.style.width = `100vw`;
+		container.style.height = `100vh`;
+		navbar.style.display = `flex`;
+		container.style.background = `#4b4343`;
+		container.style.top = 0;
+		container.style.left = 0;
+		event.style.marginTop = `4%`;
 	}
 
 	const navlinks = document.querySelectorAll(".nav-links li");
@@ -142,7 +154,6 @@ function loadproj(data) {
 	console.log("project");
 	var port_cont = document.querySelector(".portfolio-container");
 	var row = port_cont.querySelector(".row");
-	
 
 	data.forEach((project, index) => {
 		if (project.fork == false && project.name != "mywebsite" && index < 10) {
