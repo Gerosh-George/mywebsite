@@ -620,7 +620,8 @@ li {
 }
 
 .projects .header {
-  padding: 0;
+  padding-top: 4%;
+  padding-bottom: 0;
 }
 
 .portfolio-container {
