@@ -1,3 +1,5 @@
+console.log("Hey! Have a great day😄");
+
 window.addEventListener("load", function () {
 	const loader = document.querySelector(".loader");
 	loader.className += " hidden";
@@ -84,7 +86,6 @@ function aboutChange(event) {
 }
 
 function change(event) {
-	
 	event.classList.toggle("change");
 	const container = document.querySelector(".nav-container");
 	const navbar = document.querySelector(".nav-links");
@@ -151,7 +152,6 @@ function displaySection(id, index) {
 }
 
 function loadproj(data) {
-	console.log("project");
 	var port_cont = document.querySelector(".portfolio-container");
 	var row = port_cont.querySelector(".row");
 
