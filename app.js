@@ -163,11 +163,11 @@ function loadproj(data) {
 	data.forEach((project, index) => {
 		if (project.fork == false && project.name != "mywebsite" && index < 10) {
 			row += `<div class="col-sm-6">
-	<div class="card border-primary mb-3">
+	<div class="card border-primary mb-3 card-p">
 	  <div class="card-body">
 		<h5 class="card-title text-center">${project.name}</h5>
-		<p class="card-text">${project.description}</p>
-		<p class="card-text text-right">Language: ${project.language}</p>
+		<p class="card-text p-text">${project.description}</p>
+		<p class="card-text text-right p-text">Language: ${project.language}</p>
 		<a href="${project.html_url}" target="_blank" class="btn btn-primary">View Code</a>
 	  </div>
 	 </div>

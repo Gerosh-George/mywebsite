@@ -848,6 +848,10 @@ section {
 }
 
 @media only screen and (max-width: 576px) {
+  .card-p {
+    width: 75vw;
+    height: 35vh;
+  }
   .nav-container {
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -947,6 +951,9 @@ section {
     width: 80vw;
     font-size: 14px;
   }
+  .p-text {
+    width: 60vw;
+  }
 }
 
 @media only screen and (max-width: 400px) {
@@ -965,6 +972,13 @@ section {
   }
   .info .detail {
     color: #2196f3;
+  }
+  .p-text {
+    width: 60vw;
+  }
+  .card-p {
+    width: 75vw;
+    height: 40vh;
   }
 }
 /*# sourceMappingURL=styles.css.map */
