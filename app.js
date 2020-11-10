@@ -62,6 +62,10 @@ function init() {
 	aboutbtn = document.querySelector(".about-button a");
 	aboutbtn.addEventListener("click", aboutChange);
 
+	callGithub();
+}
+
+function callGithub() {
 	var ReqObj = new XMLHttpRequest();
 	ReqObj.open("GET", "https://api.github.com/users/Gerosh-George/repos");
 	ReqObj.onload = function () {
@@ -153,11 +157,12 @@ function displaySection(id, index) {
 
 function loadproj(data) {
 	var port_cont = document.querySelector(".portfolio-container");
-	var row = port_cont.querySelector(".row");
-
+	port_cont.innerHTML = "";
+	//var row = port_cont.querySelector(".row");
+	var row = `<div class="row">`;
 	data.forEach((project, index) => {
 		if (project.fork == false && project.name != "mywebsite" && index < 10) {
-			row.innerHTML += `<div class="col-sm-6">
+			row += `<div class="col-sm-6">
 	<div class="card border-primary mb-3">
 	  <div class="card-body">
 		<h5 class="card-title text-center">${project.name}</h5>
@@ -168,5 +173,34 @@ function loadproj(data) {
 	 </div>
 	</div>`;
 		}
+		
+		if (
+			(index + 1) % 2 == 0 &&
+			row != '<div class="row">' &&
+			window.innerWidth > 1000
+		) {
+			row += `</div>`;
+			port_cont.innerHTML += row;
+			row = `<div class="row">`;
+		} else if (row != '<div class="row">' && window.innerWidth < 1000) {
+			row += `</div>`;
+			port_cont.innerHTML += row;
+			row = `<div class="row">`;
+		}
+
+		if (index == 10) {
+			row = "";
+		}
 	});
+
+	if (row != '<div class="row">') {
+		row += `</div>`;
+		port_cont.innerHTML += row;
+	}
+}
+
+window.addEventListener("resize", changeProjLayout);
+
+function changeProjLayout() {
+	callGithub();
 }
