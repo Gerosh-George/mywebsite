@@ -155,6 +155,8 @@ function displaySection(id, index) {
 	currentPageIndex = index;
 }
 
+let count = 0;
+
 function loadproj(data) {
 	var port_cont = document.querySelector(".portfolio-container");
 	port_cont.innerHTML = "";
@@ -162,6 +164,7 @@ function loadproj(data) {
 	var row = `<div class="row">`;
 	data.forEach((project, index) => {
 		if (project.fork == false && project.name != "mywebsite" && index < 10) {
+			count++;
 			row += `<div class="col-sm-6">
 	<div class="card border-primary mb-3 card-p">
 	  <div class="card-body">
@@ -173,9 +176,9 @@ function loadproj(data) {
 	 </div>
 	</div>`;
 		}
-		
+
 		if (
-			(index + 1) % 2 == 0 &&
+			count % 2 == 0 &&
 			row != '<div class="row">' &&
 			window.innerWidth > 1000
 		) {
