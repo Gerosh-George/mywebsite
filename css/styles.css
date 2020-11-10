@@ -310,6 +310,10 @@ li {
   background-color: #191a1b;
 }
 
+.card {
+  width: 25rem;
+}
+
 .header {
   text-transform: uppercase;
   color: #f0eaea;
@@ -337,6 +341,7 @@ li {
   margin-top: 20px;
   margin-bottom: 20px;
   border-bottom: 2px #646262 solid;
+  padding-bottom: 3vh;
 }
 
 .profile {
@@ -356,7 +361,7 @@ li {
 .image {
   width: 300px;
   height: 300px;
-  border: 5px #2196F3 solid;
+  border: 5px #2196f3 solid;
   position: relative;
 }
 
@@ -477,7 +482,7 @@ li {
 
 .year {
   color: #dad8d8;
-  font-size: .9rem;
+  font-size: 0.9rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -594,7 +599,7 @@ li {
   line-height: 31px;
   top: 50%;
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .arrow {
@@ -850,7 +855,9 @@ section {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    height: 90vh;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
   }
   .profile {
     width: 100%;
@@ -918,12 +925,28 @@ section {
   .details h5 {
     font-size: 11.5px;
   }
+  .card-text {
+    width: 80vw;
+    font-size: 14px;
+  }
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 400px) {
   .card-text {
     font-size: 14px;
-    width: 80%;
+    width: 90vw;
+  }
+  .card {
+    width: 100vw;
+  }
+  .info {
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    -ms-grid-columns: none;
+        grid-template-columns: none;
+  }
+  .info .detail {
+    color: #2196f3;
   }
 }
 /*# sourceMappingURL=styles.css.map */
