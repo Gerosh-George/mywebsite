@@ -155,15 +155,20 @@ function displaySection(id, index) {
 	currentPageIndex = index;
 }
 
-let count = 0;
-
 function loadproj(data) {
+	let count = 0;
+
 	var port_cont = document.querySelector(".portfolio-container");
 	port_cont.innerHTML = "";
 	//var row = port_cont.querySelector(".row");
 	var row = `<div class="row">`;
 	data.forEach((project, index) => {
-		if (project.fork == false && project.name != "mywebsite" && index < 10) {
+		if (
+			project.fork == false &&
+			project.name != "mywebsite" &&
+			count < 12 &&
+			project.description != null
+		) {
 			count++;
 			row += `<div class="col-sm-6">
 	<div class="card border-primary mb-3 card-p">
@@ -191,7 +196,7 @@ function loadproj(data) {
 			row = `<div class="row">`;
 		}
 
-		if (index == 10) {
+		if (count == 12) {
 			row = "";
 		}
 	});

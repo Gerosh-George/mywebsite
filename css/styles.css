@@ -850,7 +850,6 @@ section {
 @media only screen and (max-width: 576px) {
   .card-p {
     width: 75vw;
-    height: 35vh;
   }
   .nav-container {
     -webkit-box-align: center;
@@ -978,7 +977,6 @@ section {
   }
   .card-p {
     width: 75vw;
-    height: 40vh;
   }
 }
 /*# sourceMappingURL=styles.css.map */
