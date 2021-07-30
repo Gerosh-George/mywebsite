@@ -225,7 +225,7 @@ li {
 }
 
 .home {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.65)), to(rgba(0, 0, 0, 0.65))), url("/images/cover_image.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.65)), to(rgba(0, 0, 0, 0.65))), url("images/cover_image.jpg");
   background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("/images/cover_image.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -270,8 +270,10 @@ li {
   background-color: #2196F3;
   border-color: #2196F3;
   padding: 10px 15px 10px 15px;
-  -webkit-transition: background-color 0.1s ease-in, border-color 0.1s ease-out;
-  transition: background-color 0.1s ease-in, border-color 0.1s ease-out;
+  -webkit-transition: background-color 0.1s ease-in,
+ border-color 0.1s ease-out;
+  transition: background-color 0.1s ease-in,
+ border-color 0.1s ease-out;
   position: absolute;
   left: 50%;
 }
